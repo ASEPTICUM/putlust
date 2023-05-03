@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    {% load widget_tweaks %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+      
+
+  
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- 1. Подключить CSS-файл Bootstrap 3 -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <!-- 2. Подключить CSS-файл библиотеки Bootstrap 3 DateTimePicker -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datetimepicker.min.css' %}"/>
+    
+    
+    <title>Форма заполнения Путевого Листа</title>  
+
+
+    
+</head>
+<body class="body_hide" id="body">
+        <div class="s2">
+            <!--<div class="container-fluid">
+                <div class="progress">
+                    <div class="percent"></div>
+                </div>
+                <div class="steps"> 
+                    <div class="step" id="0"></div>             
+                    <div class="step" id="1"></div>                 
+                    <div class="step" id="2"></div>                       
+                    <div class="step" id="3"></div>                     
+                </div>        
+            </div>-->
+            <div class="container">
+                <div class="row">
+                    <!--<div class="col-12 text-center add_form">
+                        <h1 style="margin-bottom: 40px; margin-top: 100px;">Форма добавления <br> путевого листа</h1>
+                    </div>-->
+                    <div class="col-12">
+                    
+                        <form id="regForm" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %} 
+
+                            <ul class="text-center" style='list-style-type: none;'>
+                                {% if obj.STATUS == 'Открытый' or obj.STATUS == None %}
+                                    <li class="open" data-toggle="tooltip" data-html="true" data-placement="top" title="<j>Статус путевого листа</j>">
+                                        <i class="fas fa-lock-open"></i> Открытый
+                                    </li>
+                                {% else %}      
+                                    <li class="lock" data-toggle="tooltip" data-html="true" data-placement="top" title="<j>Статус путевого листа</j>">
+                                        <i class="fas fa-lock"></i> Закрытый
+                                    </li>
+                                {% endif %}
+                            </ul>
+
+                            <div class="">
+                                <!--<h2 style="font-size: 40px; margin-bottom: 20px;">Этап 1</h2>-->
+                                <div class="form-row">
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Дата документа</label><sup><i class="fas fa-asterisk"></i></sup>
+
+                                        {% if 'update' in request.path %}
+                                            <div class="input-group date" data-toggle="datetimepicker">                
+                                                {% render_field form.PL_DATE placeholder="д-мм-ггг" type="text" class="form-control index" %}
+                                                <span class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        {% else %}
+                                            <div class="input-group date" id="datetimepicker1" data-target="#datetimepicker1" data-toggle="datetimepicker">                
+                                                {% render_field form.PL_DATE placeholder="д-мм-ггг" type="text" class="form-control index" %}
+                                                <span class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        {% endif %}           
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Код серии документа</label><sup><i class="fas fa-asterisk"></i></sup>
+                                        {% render_field form.SPR_SER_ID placeholder="" type="text" class="form-control index" %}
+                                    </div> 
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label>Код образа подписанного путевого листа</label><sup><i class="fas fa-asterisk"></i></sup><br>             
+                                        {% render_field form.UPL_DOCS_IMAGE_ID placeholder=""  name="file" style="height:46px;" class="form-control index"%}                                                                    
+                                        
+                                    </div>
+
+
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                        <label for="inputPassword4">Действительный до</label><sup><i class="fas fa-asterisk"></i></sup>
+                                        {% if 'update' in request.path %}
+                                            <div class="input-group date" data-toggle="datetimepicker">                
+                                                {% render_field form.SROK_DEISTV placeholder="д-мм-ггг" type="text" class="form-control index" %}
+                                                <span class="input-group-addon" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        {% else %}
+                                            <div class="input-group date" id="datetimepicker3" data-target="#datetimepicker3" data-toggle="datetimepicker">                
+                                                {% render_field form.SROK_DEISTV placeholder="д-мм-ггг" type="text" class="form-control index" %}
+                                                <span class="input-group-addon" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="">
+                                <!--<h2 style="font-size: 40px; margin-bottom: 20px;">Этап 2</h2>-->
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Организация</label><sup><i class="fas fa-asterisk"></i></sup>
+                                        {% render_field form.SPR_ORG_ID  type="text" class="form-control mm" %}
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Автомобиль</label><sup><i class="fas fa-asterisk"></i></sup>
+                                        {% render_field form.SPR_AUTO_ID placeholder="Код автомобиля" type="text" class="form-control mm" %}
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Водитель</label><sup><i class="fas fa-asterisk"></i></sup>
+                                        {% render_field form.SPR_DRIVER_ID placeholder="Код водителя" type="text" class="form-control mm" %}
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Марка топлива</label><sup><i class="fas fa-asterisk"></i></sup>
+                                        {% render_field form.SPR_MARK_TOPL_ID placeholder="Код марки топлива" type="text" class="form-control mm" %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Режим работы</label><sup><i class="fas fa-asterisk"></i></sup>
+                                    {% render_field form.SPR_REZHIM_ID placeholder="Код режима работы" type="text" class="form-control mm" %}
+                                </div>
+                            </div>
+
+
+                            <div class="">   
+                                <!--<h2 style="font-size: 40px; margin-bottom: 20px;">Этап 3</h2>-->
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Показания спидометра при выезде</label><sup><i class="fas fa-asterisk"></i></sup>
+                                        {% render_field form.VYIEZD_SPEEDOMETER placeholder="" type="text" class="form-control index" %}
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Время выезда фактическое</label>
+                                        {% if 'update' in request.path %}
+                                            <div class="input-group date" data-toggle="datetimepicker">                
+                                                {% render_field form.VYIEZD_TIME placeholder="д-мм-ггг м:ч" type="text" class="form-control index" %}
+                                                <span class="input-group-addon" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        {% else %}
+                                            <div class="input-group date" id="datetimepicker4" data-target="#datetimepicker3" data-toggle="datetimepicker">                
+                                                {% render_field form.VYIEZD_TIME placeholder="д-мм-ггг м:ч" type="text" class="form-control index" %}
+                                                <span class="input-group-addon" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Показания спидометра по возваращению</label>
+                                        {% render_field form.VOZVR_SPEEDOMETER placeholder="" type="text" class="form-control index" %}
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputPassword4">Время возвращения фактическое</label>    
+                                        {% if 'update' in request.path %}
+                                            <div class="input-group date" data-toggle="datetimepicker">                
+                                                {% render_field form.VOZVR_TIME placeholder="д-мм-ггг м:ч" type="text" class="form-control index" %}
+                                                <span class="input-group-addon" data-target="#datetimepicker5" data-toggle="datetimepicker">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        {% else %}
+                                            <div class="input-group date" id="datetimepicker5" data-target="#datetimepicker5" data-toggle="datetimepicker">                
+                                                {% render_field form.VOZVR_TIME placeholder="д-мм-ггг м:ч" type="text" class="form-control index" %}
+                                                <span class="input-group-addon" data-target="#datetimepicker5" data-toggle="datetimepicker">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Движение горючего выдано</label>
+                                    {% render_field form.DG_VYIDANO placeholder="" type="text" class="form-control index" %}
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Остаток горючего при выезде</label><sup><i class="fas fa-asterisk"></i></sup>
+                                        {% render_field form.DG_OST_VYIEZD placeholder="" type="text" class="form-control index" %}
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Остаток горючего при возвращении</label>
+                                        {% render_field form.DG_OST_VOZVR placeholder="" type="text" class="form-control index" %}
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Время работы спецоборудования</label>
+                                        {% render_field form.VR_SPECOB placeholder="" type="text" class="form-control index" %}
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Время работы двигателя</label>
+                                        {% render_field form.VR_DVIG placeholder="" type="text" class="form-control index" %}
+                                    </div>
+                                </div>                           
+                            </div>
+                            
+                            <label>Задания водителя</label>
+                            <div class="add_zadan text-center" 
+                            
+                            {% if request.build_absolute_uri == 'http://putslist.na4u.ru/Form_index/' %}
+                                data-toggle="tooltip" data-html="true" data-placement="top" title="<j>Добавления заданий необязательно</j>"
+                            {% else %}
+                                data-toggle="tooltip" data-html="true" data-placement="top" title="<j>Добавьте задание (необязательно)</j>"
+                            {% endif %}
+                                >
+                            {% if request.build_absolute_uri == 'http://putslist.na4u.ru/Form_index/' %}
+                                <div class="plus">
+                                    Чтобы добавить задания, заполните поля и сохраните путевой лист
+                                </div>
+                            {% else %}    
+                                {% if zakazs %}                       
+                                    <ul class="zadan">
+                                        <li class="li">В чье распоряжение</li>
+                                        <li class="li">Время прибытия</li>
+                                        <li class="li">Время убытия</li>
+                                        <li class="li">Вид работы</li>
+                                        <li class="li">Комментарий</li>
+                                        <li class="li">Номер путевого листа</li>                                   
+                                        <li class="opacity"></li>
+                                    </ul>
+                                {% endif %}
+                            
+                                {% for zakaz in zakazs %}
+                                    <ul class="zadang" id="TableZadan">
+                                        <li class="li">{{zakaz.ZAKAZCHIK}}</li>
+                                        <li class="li">{{zakaz.TIME_PRIB}}</li>
+                                        <li class="li">{{zakaz.TIME_UB}}</li>
+                                        <li class="li">{{zakaz.TYPE_WORK}}</li>
+                                        <li class="li">{{zakaz.COMMENTS}}</li>
+                                        <li class="li">{{zakaz.UPL_TABLE_ID}}</li>
+                                        
+                                        <a onClick="Delete({{zakaz.id}})" id="delete" class="ydal">
+                                            <li class="delete"><i class="fas fa-trash"></i></li>
+                                        </a>
+                                    </ul>
+                                {% endfor %}
+                                
+                                {% if zakazs %}                             
+                                    <div class="plus2">
+                                        <a href="#" target="popup" onclick="window.open('{% url 'add_zadan' obj.id %}','name','width=1000, height=500')">
+                                            <i class="fas fa-plus"></i>                    
+                                        </a>
+                                    </div> 
+                                {% else %}
+                                    <div class="plus">
+                                        <a href="" class="plus_add" style="margin-left: 10px;" target="popup" onclick="window.open('{% url 'add_zadan' obj.id %}','name','width=1000, height=500')">
+                                            <i class="fas fa-plus"></i>                    
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            {% endif %}                          
+                            </div>
+                        
+                            <div class="">
+                                <!--<h2 style="font-size: 40px; margin-bottom: 20px;">Этап 4</h2>  
+                                -->
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>Дата допуска водителя по состоянию здоровья </label>
+                                        {% if 'update' in request.path %}
+                                            <div class="input-group date" data-toggle="datetimepicker">                
+                                                {% render_field form.DATE_DOP placeholder="ггг-мм-д м:ч" type="text" class="form-control index" %}
+                                                <span class="input-group-addon" data-target="#datetimepicker6" data-toggle="datetimepicker">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        {% else %}
+                                            <div class="input-group date" id="datetimepicker6" data-target="#datetimepicker6" data-toggle="datetimepicker">                
+                                                {% render_field form.DATE_DOP placeholder="ггг-мм-д м:ч" type="text" class="form-control index" %}
+                                                <span class="input-group-addon" data-target="#datetimepicker6" data-toggle="datetimepicker">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Предрейсовый контроль ТС прошел </label><sup><i class="fas fa-asterisk"></i></sup>
+                                        {% if 'update' in request.path %}
+                                            <div class="input-group date" data-toggle="datetimepicker">                
+                                                {% render_field form.DATE_CONTROL placeholder="ггг-мм-д м:ч" type="text" class="form-control index" %}
+                                                <span class="input-group-addon" data-target="#datetimepicker7" data-toggle="datetimepicker">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        {% else %}
+                                            <div class="input-group date" id="datetimepicker7" data-target="#datetimepicker7" data-toggle="datetimepicker">                
+                                                {% render_field form.DATE_CONTROL placeholder="ггг-мм-д м:ч" type="text" class="form-control index" %}
+                                                <span class="input-group-addon" data-target="#datetimepicker7" data-toggle="datetimepicker">
+                                                    <i class="glyphicon glyphicon-calendar"></i>
+                                                </span>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label>ФИО механика</label><sup><i class="fas fa-asterisk"></i></sup>
+                                        {% render_field form.FIO_MEH placeholder="" type="text" class="form-control index" %}
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>ФИО принявшего механика</label><sup><i class="fas fa-asterisk"></i></sup>
+                                        {% render_field form.FIO_MEH_PRIN placeholder="" type="text" class="form-control index" %}
+                                    </div>
+                                </div>                                                               
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label>ФИО диспетчера</label><sup><i class="fas fa-asterisk"></i></sup>
+                                        {% render_field form.FIO_DISP placeholder="" type="text" class="form-control index" %}
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Колонна</label>
+                                        {% render_field form.KOLONNA placeholder="" type="text" class="form-control index" %}
+                                    </div>
+                                    <div class="form-group col-md-4">
+                                        <label>Бригада</label>
+                                        {% render_field form.BRIGADA placeholder="" type="text" class="form-control index" %}
+                                    </div>                              
+                                </div>
+                                {% if 'update' in request.path %}
+                                <div class="form-row">
+                                    <div class="form-group" style=" border-radius: 7px; padding: 6px; background-color: #3A4750; color: white;" data-toggle="tooltip" data-html="true" data-placement="top" title="<j>Расход</j>">
+                                        <label><i class="fas fa-burn" style="margin-right: 6px;"></i> </label>
+                                            <w>{{obj.RASHOD}}</w>
+                                    </div>
+                                    <div class="form-group" style=" border-radius: 7px; padding: 6px; margin-left: 10px; background-color: #3A4750; color: white;" data-toggle="tooltip" data-html="true" data-placement="top" title="<j>Пробег</j>">
+                                        <label><i class="fas fa-tachometer-alt" style="margin-right: 6px;"></i> </label>
+                                            <w>{{obj.PROBEG}}</w>
+                                    </div>                                 
+                                </div>
+                                {% endif %}
+                                
+                            </div>
+
+                            <div style="overflow:auto;" class="bn">
+                                <div class="back">
+                                    {% if request.build_absolute_uri == 'http://putslist.na4u.ru/Form_index/' %}
+                                        <a href="{% url 'index' %}" class="btn btn-danger" >Отмена</a>
+                                    {% else %}
+                                        <a href="{% url 'index' %}" class="btn btn-secondary" >Перейти на главную</a>
+                                    {% endif %}
+                                </div>
+                                <div class="then">
+                                    <!--<button type="button" id="prevBtn" onclick="nextPrev(-1)" class="btn btn-primary"><i class="fas fa-angle-left"></i></button>
+                                    <button type="button" id="nextBtn" onclick="nextPrev(1)" class="btn btn-primary dal">Далее</button>-->
+                                    {% if request.build_absolute_uri == 'http://putslist.na4u.ru/Form_index/' %}
+                                            <button type="submit" data-toggle="tooltip" data-html="true" data-placement="top" title="<j>Добавить запись и остаться на странице</j>" formaction="{% url 'Form_index' %}" class="btn btn-success add">Сохранить</button>     
+                                            <button type="submit" data-toggle="tooltip" data-html="true" data-placement="top" title="<j>Добавить запись и перейти на главную страницу</j>" formaction="{% url 'Form_index_TWObtn' %}" class="btn btn-primary add ">Добавить</button>    
+                                    {% else %}
+                                        <button type="submit" class="btn btn-success add ">Сохранить</button>                 
+                                    {% endif %}              
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+ 
+
+
+
+
+    <!-- 3. Подключить библиотеку jQuery -->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <!-- 4. Подключить библиотеку moment -->
+    <script src="{% static 'js/moment-with-locales.min.js' %}"></script>
+    <!-- 5. Подключить js-файл фреймворка Bootstrap 3 -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- 6. Подключить js-файл библиотеки Bootstrap 3 DateTimePicker -->
+    <script src="{% static 'js/bootstrap-datetimepicker.min.js' %}"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({
+                locale: 'ru',
+                format: 'DD/MM/YYYY',
+            });
+            $('#datetimepicker2').datetimepicker({
+                locale: 'ru',
+                format: 'DD/MM/YYYY',
+            });
+            $('#datetimepicker3').datetimepicker({
+                locale: 'ru',
+                format: 'DD/MM/YYYY',
+            });
+            $('#datetimepicker4').datetimepicker({
+                locale: 'ru',
+                format: 'DD/MM/YYYY HH:mm',
+            });
+            $('#datetimepicker5').datetimepicker({
+                locale: 'ru',
+                format: 'DD/MM/YYYY HH:mm',
+            });
+            $('#datetimepicker6').datetimepicker({
+                locale: 'ru',
+                format: 'DD/MM/YYYY HH:mm',
+            });
+            $('#datetimepicker7').datetimepicker({
+                locale: 'ru',
+                format: 'DD/MM/YYYY HH:mm',
+            });
+        });
+    </script>
+
+    <script>
+
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+          })
+
+    </script>
+
+    <script src="{% static 'js/ArrowHidden.js' %}"></script>
+    <script src="{% static 'js/ajax.js' %}"></script>
+
+
+<!-- Плавное появление страницы <script src="{% static 'js/AddForm.js' %}"></script> -->
+   <script>
+    setTimeout(function() {
+        document.body.classList.add('body_visible');
+    }, 150);
+
+    </script>
+    
+</body>
+</html>

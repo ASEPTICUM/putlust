@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    {% load widget_tweaks %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" />
+      
+
+  
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <!-- 1. Подключить CSS-файл Bootstrap 3 -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <!-- 2. Подключить CSS-файл библиотеки Bootstrap 3 DateTimePicker -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datetimepicker.min.css' %}"/>
+    
+    
+    <title>Задание водителю</title>
+
+
+    
+</head>
+<body class="body_hide" id="body">
+        <div class="s2">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label>В чье распоряжение</label><sup><i class="fas fa-asterisk"></i></sup>
+                                {% render_field form.ZAKAZCHIK placeholder="" type="text" class="form-control index" %}
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Время прибытия</label><sup><i class="fas fa-asterisk"></i></sup>
+                                    {% render_field form.TIME_PRIB placeholder="" type="text" class="form-control index" %} 
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label>Время убытия</label><sup><i class="fas fa-asterisk"></i></sup>
+                                    {% render_field form.TIME_UB  placeholder="" type="text" class="form-control index" %}
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label>Вид работы</label><sup><i class="fas fa-asterisk"></i></sup>
+                                    {% render_field form.TYPE_WORK placeholder="" type="text" class="form-control index" %}
+                                </div>            
+                            </div>
+                            <div class="form-row">
+                                <fieldset class="form-group col-md-3" style="display:none;">                             
+                                      <label  class="form-label">Номер путевого листа</label>
+                                  {% render_field form.UPL_TABLE_ID placeholder="" type="text" class="form-control index" %}
+                                </fieldset>
+
+                                <div class="form-group col-md-12">
+                                    <label>Комментарий</label>
+                                    {% render_field form.COMMENTS placeholder="" type="text" class="form-control index" %}
+                                </div>          
+                            </div>  
+                            <div style="overflow:auto;" class="bn">
+                                <div class="back">
+                                    <a onclick="window.close()" class="btn btn-danger" >Отмена</a>
+                                </div>
+                                <div class="then">
+                                    <button type="submit" class="btn btn-primary add ">Добавить</button>  
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    
+
+    <!-- 3. Подключить библиотеку jQuery -->
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+    <!-- 4. Подключить библиотеку moment -->
+    <script src="{% static 'js/moment-with-locales.min.js' %}"></script>
+    <!-- 5. Подключить js-файл фреймворка Bootstrap 3 -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- 6. Подключить js-файл библиотеки Bootstrap 3 DateTimePicker -->
+    <script src="{% static 'js/bootstrap-datetimepicker.min.js' %}"></script>
+
+
+    <script src="{% static 'js/ArrowHidden.js' %}"></script>
+    
+
+<!-- Плавное появление страницы <script src="{% static 'js/AddForm.js' %}"></script> -->
+   <script>
+    setTimeout(function() {
+        document.body.classList.add('body_visible');
+    }, 150);
+
+    </script>
+    
+</body>
+</html>

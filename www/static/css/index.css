@@ -1,0 +1,997 @@
+/*
+* {
+    -webkit-touch-callout: none;  iOS Safari 
+      -webkit-user-select: none;  Safari 
+       -khtml-user-select: none;  Konqueror HTML 
+         -moz-user-select: none;  Old versions of Firefox 
+          -ms-user-select: none;  Internet Explorer/Edge 
+              user-select: none;
+  }
+  */
+  
+
+
+/*srollBAR*/
+::-webkit-scrollbar {
+    width: 2px;
+    height: 1px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background:#005691;
+    background:-moz-linear-gradient(45deg,#005691 0,#004A7C 100%);
+    background:-webkit-gradient(left bottom,right top,color-stop(0,#005691),color-stop(100%,#004A7C));
+    background:-webkit-linear-gradient(45deg,#005691 0,#004A7C 100%);
+    background:-o-linear-gradient(45deg,#005691 0,#004A7C 100%);
+    background:-ms-linear-gradient(45deg,#005691 0,#004A7C 100%);
+    background:linear-gradient(45deg,#005691 0,#004A7C 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#005691',endColorstr='#004A7C',GradientType=1);
+    
+}
+
+
+
+/*****S1*****/
+/*Плавность*/
+.body_hide {
+    opacity: 0;
+    transition: .6s opacity ease-in-out;
+    
+}
+
+.body_visible {
+    opacity: 1;
+}
+
+/* */
+.s1 .col-12 h1,
+.s1 .col-12 a,
+.s1 .col-12 .line {
+    display: inline-block;
+    
+}
+
+/**  **/
+.s1 {
+    background-color: rgba(255, 255, 255, 0.911);
+   
+}
+.s1 .container_zag {
+   
+    
+}
+.s1 .container_zag h1{
+    font-size: 20px;
+    font-family: "Raleway", "sans-serif";
+    margin-top: 25px;
+    margin-left: 20px;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+.s1 .container_zag h2{
+    font-size: 20px;
+    font-family: "Raleway", "sans-serif";
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 17px;
+    color: rgb(8, 130, 230); 
+}
+.s1 .container_zag a{
+    font-weight: 300;
+    width: 145px;
+    padding: 3px 3px 3px 15px;
+    margin-top: 10px;
+    border-radius: 9px;
+    transition: .2s;
+    margin-bottom: 10px;
+    text-decoration: none;
+
+}
+.s1 .container_zag .line{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.s1 .container_tables {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin: 5px;
+    box-shadow: -4px -5px 70px -5px rgba(0, 0, 0, 0.1);
+    
+}
+
+.s1 .container_zag .container_tables {
+    display: flex;
+    justify-content: space-between;
+}
+.s1 .cont {
+  margin-top: 20px;
+  
+}
+.s1 .container_zag ul li {
+  display: inline-block;
+}
+.s1 .container_zag ul {
+  display: inline-block;
+}
+.s1 .col-2 {
+    background-color: rgb(245,245,245);
+}
+.s1 .border_v1 {
+    
+}
+.s1 .border_v2 {
+    display: flex;
+    justify-content: space-between;
+}
+.s1 .puts {
+    background-color: rgb(248, 248, 248);
+    border-radius: 15px 15px 0px 0px;
+    padding-bottom: 20px;
+}
+.s1 .puts_on {
+    width: 97%;
+}
+.s1 .container_tables li {
+    list-style-type: none;
+
+}
+
+.blue {
+    color:rgb(8, 130, 230);
+}
+.s1 .container_tables .li a {       
+    width: 205px;
+    padding: 9px 9px 9px 20px;
+   
+    border-radius: 9px;
+    transition: .2s;
+    display: block;  
+    transition: .2s;
+}
+
+.s1 a {
+    font-weight: 300;
+    text-decoration: none;
+    color: #000;  
+}
+.s1 a:hover {
+  color: #000;
+}
+.s1 .spr:hover{
+    background-color: rgb(228, 228, 228);
+    transition: .2s;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.s1 .container_tables .li a:hover {
+    text-decoration: none;
+    transition: .2s;
+}
+.s1 .container_tables .li a i {
+    margin-right: 5px;
+}
+
+.s1 .url_table {
+    font-size: 20px;
+    font-family: "Raleway", "sans-serif";
+    margin: 10px;
+}
+.s1 .container_tables .li {
+    margin-bottom: 12px;
+  
+}
+.s1 .container_tables .add {
+    color: white;
+    padding: 7px 10px 7px 10px;
+    background-color: rgb(77,161,128);
+    font-size: 10px;
+    border-radius: 7px;
+    transition: .2s;
+}
+.s1 .container_tables a {
+    text-decoration: none;
+}
+.s1 .container_tables .add:hover {
+    background-color: rgb(55, 115, 91);
+    transition: .2s;
+}
+
+.s1 .shift_scroll {
+    border: 1px solid rgba(108, 108, 108, 0.54);
+    font-size: 14px;
+    color: rgba(108, 108, 108, 0.54);
+    margin-left: 15px;
+    padding: 3px 5px 3px 5px;
+    border-radius: 7px;
+    opacity: 0.6;
+}
+
+.s1 .menu {
+    display: inline-block;
+    border-radius: 13px;
+    margin: 5px;
+    margin-top: 10px;
+    box-shadow: 1px -1px 31px 0px rgba(34, 60, 80, 0.04);
+    background-color: rgba(255, 255, 255, 0.826);
+    border: 1px solid rgb(228, 228, 228);
+}
+.s1 .logout {
+    display: inline-block;
+    padding-top: 10px;
+
+    background-color: rgba(255, 255, 255, 0.826);
+    padding: 10px 20px 10px 20px;
+    border-radius: 13px;
+    margin: 5px;
+    margin-top: 10px;
+    box-shadow: 1px -1px 31px 0px rgba(34, 60, 80, 0.04);
+    border: 1px solid rgb(228, 228, 228);
+  
+}
+
+.s1 .logout a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 46px;
+    color: black;
+    background-color: rgb(218, 74, 74);
+    transition: .2s;
+    border-radius: 10px;
+    margin-left: 30px;
+}
+.s1 .logout a:hover {
+    background-color: rgb(184, 65, 65);
+    transition: .2s;
+}
+.s1 .logout_btn .fa-sign-out-alt {
+    margin-right: 10px;
+    color: white;
+}
+.s1 .logout span {
+    font-weight: 700;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    border-radius: 7px;
+    font-size: 10px;
+    margin-right: 10px;
+    background: rgb(255,188,41);
+    background: linear-gradient(142deg, rgba(255,188,41,1) 28%, rgba(255,216,22,1) 56%);
+    
+}
+
+
+
+
+/*table putList*/   
+
+.s1 .url_add {
+    margin: 10px;
+}
+.s1 .put_list li{
+    font-size: 10px;
+    font-family: "Inter","sans-serif";
+    padding: 10px;
+    height: 35px;
+    padding-bottom: 30px;
+}
+.s1 .t {
+    flex: 0 0 14em;
+}
+.s1 .tt {
+    flex: 0 0 14em;
+}
+.s1 .put_list {
+    display: flex;
+    flex-direction: row;
+}
+.s1 .put {
+    overflow: auto;
+    height: 78vh;
+    margin-top: 20px;
+}
+.s1 .redact {
+  padding-top: 90px;
+  background-color: #f8f8f8;
+  
+}
+
+
+.s1 .itog {
+    border: 1px dashed rgba(39, 39, 39, 0.724);
+    display: flex;
+    flex-direction: row;
+    background-color: #00000015;
+    border-radius: 5px;
+}
+.s1 .itog li{
+    font-size: 10px;
+    font-family: "Inter","sans-serif";
+    padding: 2px 10px 20px 10px;
+    height: 10px;   
+}
+.s1 .itog .fas{
+    margin-right: 6px;  
+}
+.s1 .itog .count {
+    color:rgb(23, 150, 34);
+    margin-left: -30px;
+}
+.s1 .itog .fire {
+    color: tomato;
+}
+
+
+
+/*.s1 .redact_two {
+  margin-top: -30px;
+  margin-left: 20px;
+  position: absolute;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: -1px 1px 8px 0px rgba(34, 60, 80, 0.089);
+  display: none;
+  transition: .2s;
+  border-radius: 7px;
+}
+.s1 .redact_two:hover  {
+  display: block;
+  transition: .2s;
+}
+.s1 .put_list:hover .redact_two {
+  display: block;
+  transition: .2s;
+}
+*/
+
+.s1 .fa-circle {
+  font-size: 5px;
+  margin-left: 10px;
+  color:rgb(132, 132, 132);
+}
+
+.s1 .wi {   
+    flex: 0 0 22em;
+}
+.s1 .widt {
+    font-weight: 700;
+    
+}
+.s1 .svet {
+  background-color: rgba(0, 0, 0, 0.045);
+  border-radius: 5px;
+}
+
+.s1 .bor_bot {
+    margin-bottom: 30px;
+
+}
+.s1 .bor_bot_two {
+    margin-bottom: 3px;
+    padding-bottom: 5px;
+    position: relative;
+    padding-left: 35px;
+    padding-top: 5px;
+    box-shadow: 2px 0px 19px -10px rgba(34, 60, 80, 0.2);
+    border-radius: 5px;
+}
+
+.s1 .bor_bot_two:hover   {
+    background-color: #dbe2ef65;
+}
+.s1 .bor_bot_two:active   {
+    background-color: #008bba47;
+}
+
+
+
+.selected {
+    background-color: #008bba97;
+    color: #fff;
+}
+
+
+
+.s1 .delete .btn {
+    color: white;
+    background-color: red;
+    border-radius: 7px;
+    font-weight: 500;
+    color: white;
+    padding: 7px 10px 7px 10px;
+    font-size: 10px;
+    border-radius: 7px;
+    transition: .2s;
+    border: none;
+}
+
+.s1 .delete .desable {
+    opacity: 0.2;
+}
+.s1 .delete {
+    font-size: 10px;
+    margin-top: 10px;
+}
+.s1 .delete button .fa-trash-alt {
+    margin-right: 8px;
+}
+.s1 .delete .btn:hover {
+    background-color: rgb(189, 12, 12);
+    transition: .2s;
+}
+
+
+
+.s1 .rev .btn {
+    color: white;
+    background-color: rgb(0, 89, 255);
+    border-radius: 7px;
+    font-weight: 500;
+    color: white;
+    padding: 7px 10px 7px 10px;
+    font-size: 10px;
+    border-radius: 7px;
+    transition: .2s;
+    border: none;
+}
+
+.s1 .rev .desable {
+    opacity: 0.2;
+}
+
+.s1 .rev {
+    margin-left: 10px;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.s1 .rev button .fa-pen {
+    margin-right: 8px;
+}
+.s1 .rev .btn:hover {
+    background-color: rgb(9, 87, 151);
+    transition: .2s;
+}
+
+
+
+.s1 .download .btn {
+    background-color: rgb(23, 150, 34);
+    color: white;
+    border-radius: 7px;
+    font-weight: 500;
+    color: white;
+    padding: 7px 10px 7px 10px;
+    font-size: 10px;
+    border-radius: 7px;
+    transition: .2s;
+    border: none;
+}
+.s1 .download .desable {
+    opacity: 0.2;
+}
+.s1 .download {
+    margin-left: -7px;
+    font-size: 10px;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+.s1 .download button .fa-file-download {
+    margin-right: 8px;
+}
+.s1 .download .btn:hover {
+    background-color: rgb(10, 91, 17);
+    transition: .2s;
+}
+
+
+.s1 .closed-search {
+    font-size: 13px;
+    padding: 6px 8px 9px 8px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 10px;
+    background-color: rgba(224, 224, 224, 0.801);
+    cursor: pointer;
+    transition: .2s;
+    margin-top: 1000px;
+}
+.s1 .closed-search:hover {
+    background-color: rgba(202, 202, 202, 0.801);
+    transition: .2s;
+}
+.s1 .closed-search .fa-times {
+    margin-left: 10px;
+    color: rgba(56, 56, 56, 0.367);
+}
+
+
+/* */
+
+.s1 .arrow_hidden {
+    cursor: pointer;
+    transition: .2s;
+}
+.s1 .arrow_hidden:hover {
+    color:rgb(193, 193, 193);
+    transition: .2s;
+}
+.s1 .hidden {
+    display: none;
+}
+
+.s1 .search {
+    border: none;
+    background-color: #2b2b2b15;
+    border-radius: 7px 0px 0px 7px;
+    font-size: 10px;
+    margin-left: 45px;
+    padding: 8px;
+}
+.s1 .search_btn {
+    font-size: 13px;
+    border: none;
+    background-color: #007fd4;
+    color: white;
+    padding: 5px 8px 5px 8px;
+    border-radius: 0px 7px 7px 0px ;
+    margin-left: -23px;
+}
+textarea:focus, 
+input:focus,
+select:focus{
+    outline: none;
+}
+input:focus,
+input:active {
+    border: none;
+}
+
+
+/*сортировка checkbox*/
+
+.s1 .checkbox {
+    width: 100px;
+    font-size: 10px;
+    padding: 10px;
+    border: 1px solid #00000019;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 1px 13px 28px -17px rgba(0, 0, 0, 0.19);
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 220px;
+    z-index: 9999;
+    display: none;
+}
+.s1 .checkbox .box {
+    padding: 0px;
+}
+.s1 .checkbox button {
+    margin-left: 11px;
+    border: none;
+    padding: 4px 7px 4px 7px;
+    border-radius: 5px;
+    background-color: #007fd4;
+    color: white;
+    font-weight: 400;
+    
+}
+
+.s1 .checkbox button:hover {
+    background-color: #005792;
+}
+.s1 .check {
+    display: flex; 
+    justify-content: space-around
+}
+/* arrows */
+.s1 .fa-angle-down {
+    margin-left: 5px;
+    font-size: 13px;
+    color: #007fd4;
+    cursor: pointer; 
+}
+.s1 .fa-angle-down:hover {
+    color: #005a95;
+}
+/* */
+
+/*****S2*****/
+.s2 j {
+    font-family: "Raleway", "sans-serif";
+}
+
+.s2 {
+    font-family: "Raleway", "sans-serif";
+}
+.s2 .container {
+   margin-top: 60px;
+}
+.s2 .zag {
+   
+    opacity: 0.5;
+}
+.s2 .add_form {
+    margin-bottom: 20px;
+}
+.s2 .point {
+    color: #007fd4;
+    font-size: 8px;
+    opacity: 0.9;
+    display: inline-block;
+}
+.s2 .line {
+    border-bottom: 1px solid #007fd4; 
+    width: 200px;
+    padding-top: 10px;
+    display: inline-block;
+}
+.s2 h3 {
+    font-size: 20px;
+    margin-top: -10px;
+    opacity: 0.5;
+    font-weight: 400;
+}
+.s2 h2 {
+    font-size: 70px;
+    font-weight: 200;
+    opacity: 0.4;
+    color: black;
+}
+.s2 h1 {
+    font-size: 20px;
+    opacity: 0.5;
+    font-weight: 300;
+
+}
+.s2 .active {
+    color: #007fd4;
+    font-weight: 500;
+}
+
+.s2 .index {
+    font-size: 15px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.098);
+    padding: 9px 6px 9px 6px;
+    font-family: Raleway;   
+    margin-bottom: 14px;
+    transition: .2s;
+}
+.s2 .index:focus {
+    border: 1px solid #007fd4;
+    box-shadow: 2px 0px 8px 0px #007fd489;
+    transition: .2s;
+}
+.s2 label {
+    font-weight: 500;
+}
+.s2 .mm {
+    padding: 1px;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.098);
+}
+
+
+.s2 .none {
+    display: none;
+}
+
+.s2 .bn {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.s2 .back,
+.s2 .then {
+    display: inline-block;
+    margin-top: 24px;
+}
+
+
+.s2 .invalid {
+    background-color: #ffdddd;
+}
+.s2 .tab {
+    display: none;
+}
+.step.active {
+    opacity: 1;
+}
+.step.finish {
+    color: #007fd4;
+}
+.s2 .step .fas {
+    font-size: 10px;
+    display: inline-block;
+}
+.s2 .step .text {
+    font-size: 20px;
+    margin-top: -10px;
+    display: block;
+}
+
+.fa-asterisk {
+    color: red;
+    font-size: 7px;
+    margin-left: 5px;
+
+}
+
+.s2 .btn-primary {
+    background-color: #0993ee;
+    border: 1px solid #007fd4;
+}
+.s2 .btn-primary:hover,
+.s2 .btn-primary:active {
+    background-color: #128ada;
+    border: 1px solid #128ada;
+}
+
+.btn:focus,
+.btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+}
+::placeholder {
+    padding: 20px 10px 20px 4px;
+    color: rgba(0, 0, 0, 0.499);
+    
+}
+textarea:focus, 
+input:focus,
+select:focus{
+    outline: none;
+}
+
+
+
+.s2 .container-fluid {
+    position: absolute;
+    background-color: none;
+  }
+
+.s2 .steps {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.s2 .step {
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border: 2px solid #00000033;
+    border-radius: 50%;
+    transition: background 1s;
+    margin-top: -31px;
+    z-index: 9999;
+
+}
+.s2 .step.selected {
+    border: 2px solid #0993ee;   
+    transition: background 1s;
+}
+.s2 .step.completed {
+    border: 2px solid #0993ee;
+    background: #0993ee; 
+    transition: background 1s;
+}
+.s2 .progress { 
+    width: 100%;
+    height: 10%;  
+    z-index: -9999;  
+}
+.s2 .percent {
+   
+    width: 0;
+    height: 100%;
+    border-bottom: 2px solid #0993ee;
+    z-index: 1;
+    transition: width 1s;
+}
+
+
+.s2 .add_zadan {
+    padding: 10px;
+    margin-bottom: 40px;
+    background-color: #c8c8c82a;
+    border-radius: 15px;
+    border: 2px dashed #15a8f2;
+    overflow-x: auto;
+}
+
+
+.s2 .add_zadan .plus .fa-plus {
+    font-size: 40px;
+    margin: 45px 10px 50px 10px;
+    transition: .2s;
+}
+
+.s2 .add_zadan .plus a {
+  
+   /* padding: 73px 10px 60px 10px;*/
+    
+}
+
+.s2 .add_zadan .plus a:hover {
+    color: rgba(0, 0, 0, 0.196);
+    transition: .1s;
+}
+
+.s2 .add_zadan .plus2 .fa-plus {
+    font-size: 17px;
+    margin-top: 20px;
+  
+    transition: .2s;
+}
+.s2 .add_zadan .plus a:hover {
+    
+}
+
+
+
+.s2 .add_zadan ul.zadan {
+  display: flex;
+  justify-content: space-between;
+}
+.s2 .add_zadan ul.zadang {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.s2 .add_zadan ul.zadan .li {
+  list-style-type: none;
+  margin-left: -40px;
+  padding: 10px 2px 10px 2px;
+  border-radius: 10px;
+  background-color: #3838381d;
+  width: 160px;
+  font-size: 10px;
+  font-weight: 700;
+}
+.s2 .add_zadan ul.zadang .li {
+  list-style-type: none;
+  margin-left: -40px;
+  padding: 10px 2px 10px 2px;
+  border-radius: 10px;
+  background-color: #5f5f5f18;
+  width: 160px;
+  font-size: 10px;
+}
+
+
+.s2 .add_zadan ul.zadan .opacity {
+    width: 50px;
+    list-style-type: none;
+}
+.s2 .add_zadan ul.zadang #delete {
+    
+    margin-top: 3px;
+}
+.s2 .add_zadan ul.zadang .delete {
+    width: 50px;
+    list-style-type: none;
+    padding: 4px 0px 4px 0px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(223, 0, 0);
+    opacity: 0.5;
+    transition: .2s;
+}
+.s2 .add_zadan ul.zadang .delete:hover {
+    opacity: 1;
+    transition: .2s;
+}
+
+.s2 .lock {
+    color: red;
+    font-size: 15px;
+    margin-left: -40px;
+    font-weight: 600;
+}
+.s2 .open {
+    color: green;
+    font-size: 15px;
+    margin-left: -40px;
+    font-weight: 600;
+}
+
+.s2 w {
+    font-weight: 800;
+}
+
+
+/*****media
+
+.s2 .btn {
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-radius: 6px;
+    background-color: #68c2ff;
+    color: black;
+    
+}
+
+.s2 a.back {
+    color: rgba(0, 0, 0, 0.561); 
+    border: 1px solid rgba(0, 0, 0, 0.324);
+    padding: 7px 7px 9px 7px;
+    border-radius: 5px;
+}
+
+.s2 a {
+    text-decoration: none;
+    color: black;
+}
+
+*****/
+
+.pagination {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 20px;;
+}
+
+.pagination a {
+    text-decoration: none;
+}
+.pagination a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.pagination .num {
+    padding: 1px 6px 1px 6px;
+    color: black;
+    background-color: white;
+    border: 1px solid #007fd4;
+    margin-right: 3px;
+    border-radius: 5px;
+}
+.pagination .num:hover {
+    background-color: #007fd4;
+}
+
+.pagination .page-current {
+    padding: 1px 7px 1px 6px;
+    color: white;
+    margin-right: 3px;
+    border-radius: 5px;
+    background-color: #007fd4;
+    border: 1px solid #007fd4;
+}
+
+.pagination .double-l {
+    padding: 1px 6px 1px 6px;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border: 1px solid #007fd4;
+    margin-right: 3px;
+    border-radius: 5px;
+}
+.pagination .double-l:hover {
+    background-color: #007fd4;
+    color: white;
+}
+
+.pagination .double-r {
+    padding: 1px 6px 1px 6px;
+    color: black;
+    background-color: white;
+    border: 1px solid #007fd4;
+    margin-right: 3px;
+    border-radius: 5px;
+}
+.pagination .double-r:hover {
+    background-color: #007fd4;
+    color: white;
+}
+

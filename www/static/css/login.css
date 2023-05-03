@@ -1,0 +1,205 @@
+* {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none;
+  }
+  
+
+/*Плавность*/
+.body_hide {
+    opacity: 0;
+    transition: .6s opacity ease-in-out;
+}
+
+.body_visible {
+    opacity: 1;
+}
+
+/*html*/
+html {
+    overflow-y: hidden;  
+}
+
+
+
+
+.s1 .container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.s1 .container-fluid h1,
+.s1 .container-fluid input,
+.s1 .container-fluid button {
+    font-family: "Raleway", sans-serif;
+}
+
+
+
+
+.s1 .container-fluid button {
+    margin: 20px 0px 10px 0px;
+    font-size: 18px;
+    border: none;
+    color: white;
+    padding: 5px 25px 5px 25px;
+    border-radius: 6px;
+    background-color: #00ADB5;
+    /*background-image: linear-gradient(to right, #37d5d6  0%, #37d5d6  10%, #122588 150%);*/
+    letter-spacing: 2px;
+    transition: .2s;
+    width: 235px;
+}
+.s1 .container-fluid button:active {
+    opacity: 0.4;
+    transition: .2s;
+}
+.s1 .container-fluid button:hover {
+    background-color: #038d94;
+    transition: .2s;
+}
+
+.s1 .container-fluid .row .col {
+    margin-top: -250px;
+}
+
+.s1 .login {
+    border: 1px solid #56616f;
+    border-radius: 7px 7px 7px 7px;
+    background-color: #393E46;
+    box-shadow: 2px 8px 29px -9px rgba(34, 60, 80, 0.34);
+}
+
+.s1 .login .what {
+    border-radius: 7px 7px 0px 0px;
+    color: white;
+    border: 1px solid #292f37;
+    font-size: 20px;
+    padding: 20px;
+    background-color: #222831;
+}
+
+.s1 .login form {
+    margin: 60px 40px 40px 40px;
+}
+
+
+
+
+.s1 .container-fluid input {
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(242, 242, 242);
+    padding: 10px 20px 10px 20px;
+    font-size: 17px;
+}
+.s1 .container-fluid input:focus,
+.s1 .container-fluid input:active {
+    border: none;
+}
+textarea:focus, 
+input:focus,
+select:focus{
+    outline: none;
+}
+.s1 .container-fluid .one {
+    margin-top: 20px;
+}
+
+::placeholder {
+    padding: 20px 10px 20px 4px;
+    font-size: 13px;
+    
+}
+              
+.s1 .a i {
+    background: linear-gradient(to right, #37d5d6  0%, #37d5d6  10%, #122588 150%);
+    font-size: 40px;
+    cursor: pointer;
+    margin: 30px 30px 30px 30px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: .2s;  
+}
+.s1 a i:hover,
+.s1 a i:active{
+    opacity: 0.5;
+    transition: .2s;  
+    
+}
+
+.s1 select {
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 16px;
+    background-color: rgb(242, 242, 242);
+    padding: 10px 20px 10px 20px;
+    font-size: 14px;
+    width: 195px;
+   
+}
+
+.s1 .fa-plus {
+    margin-left: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.s1 form a {
+    color: #323232;
+}
+.s1 .plus {
+    margin-left: 21px;
+}
+
+
+
+
+.s1 .input-group-text {
+    background-color: rgb(242, 242, 242);
+    border: none;
+    padding-bottom: -20px;
+    padding-top: -20px;
+    border-radius: 0px 16px 16px 0px ;
+    border: 1px solid red;
+}
+.s1 .input-group-append {
+    border: 1px solid blue;
+    padding: -20px;
+}
+
+.s1 .fa-calendar {
+    font-size: 10px;
+    margin: 0px;
+}
+
+
+.password {
+	width: 300px;
+	margin: 15px auto;
+	position: relative;
+}
+
+.password-control {
+	position: absolute;
+	top: 11px;
+	right: -2px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	background: url(https://snipp.ru/demo/495/view.svg) 0 0 no-repeat;
+    opacity: 0.6;
+}
+.password-control.view {
+	background: url(https://snipp.ru/demo/495/no-view.svg) 0 0 no-repeat;
+    opacity: 0.6;
+}
+
+
+
+
